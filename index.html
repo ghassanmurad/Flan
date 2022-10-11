@@ -1,0 +1,562 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Verdana, sans-serif;
+            margin: 0;
+            background-color: #111111;
+        }
+
+        .mySlides {
+            display: none;
+        }
+
+        img {
+            vertical-align: middle;
+        }
+
+        /* Slideshow container */
+        .slideshow-container {
+
+            position: absolute;
+            margin: auto;
+            overflow: hidden;
+            z-index: 0;
+
+        }
+
+        .slide-img {
+            object-fit: cover;
+            width: 100vw;
+            height: 100vh;
+        }
+
+        /* Caption text */
+        .link-text {
+            color: #f2f2f2;
+            font-size: 12px;
+            padding: 8px 12px;
+            position: absolute;
+            bottom: 8px;
+            width: 100%;
+            text-align: center;
+            text-decoration: none;
+            font-family: 'Open Sans';
+            font-weight: 700;
+
+        }
+
+        .name {
+            font-family: 'Open Sans';
+            color: #f2f2f2;
+            font-size: 16px;
+            padding: 8px 12px;
+            position: absolute;
+            bottom: 74px;
+            width: 100%;
+            text-align: center;
+            font-weight: bold;
+            text-transform: uppercase;
+
+        }
+
+        .action-container {
+            background: rgba(255, 0, 154, 1);
+            width: 100%;
+            position: absolute;
+            height: 48px;
+            bottom: 0;
+            border-radius: 0px 0px 16px 16px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: all 500ms;
+
+        }
+
+        .action-container:hover .logo {
+            filter: invert(1);
+        }
+
+        .action-container:hover {
+            background: #ffffff;
+        }
+
+        .action-container:hover .link-text {
+            color: #111111;
+        }
+
+
+        .type {
+            font-family: 'Open Sans';
+            color: #FF81CF;
+            letter-spacing: 1px;
+            font-size: 12px;
+            padding: 8px 12px;
+            position: absolute;
+            bottom: 54px;
+            width: 100%;
+            text-align: center;
+            text-transform: uppercase;
+        }
+
+        /* Number text (1/3 etc) */
+        .numbertext {
+            color: #f2f2f2;
+            font-size: 12px;
+            padding: 8px 12px;
+            position: absolute;
+            top: 0;
+        }
+
+        /* The dots/bullets/indicators */
+        .dot {
+            height: 15px;
+            width: 15px;
+            margin: 0 2px;
+            background-color: #bbb;
+            border-radius: 50%;
+            display: none;
+            transition: background-color 0.6s ease;
+        }
+
+
+        .active {
+            background-color: #717171;
+        }
+
+        /* Fading animation */
+        .fade {
+            animation-name: fade;
+            animation-duration: 5000ms;
+        }
+
+        @keyframes fade {
+            0% {
+                opacity: 0
+            }
+
+            10% {
+                opacity: 1
+            }
+
+            90% {
+                opacity: 1
+            }
+
+            100% {
+                opacity: 0
+            }
+        }
+
+        /* On smaller screens, decrease text size */
+        @media only screen and (max-width: 300px) {
+            .text {
+                font-size: 11px
+            }
+        }
+
+        .id-card {
+            background-color: #111111aa;
+            position: absolute;
+            z-index: 2;
+            height: 280px;
+            bottom: 0;
+            width: 200px;
+            margin: 16px;
+            border-radius: 18px;
+            border: solid 2px #FF009A;
+            animation: 3s infinite sway;
+        }
+
+        .qr-card {
+            position: absolute;
+            z-index: 2;
+            height: 200px;
+            top: 0;
+            right: 0;
+            width: 200px;
+            margin: -16px;
+            border-radius: 18px;
+        }
+
+        @keyframes sway {
+            0% {
+                transform: rotate3d(0, 1, -0.2, -10deg);
+            }
+
+            50% {
+                transform: rotate3d(0, 1, -0.2, 10deg);
+            }
+
+            100% {
+                transform: rotate3d(0, 1, -0.2, -10deg);
+            }
+        }
+
+        .profile-pic {
+            object-fit: cover;
+            height: 128px;
+            margin-left: 32px;
+            margin-top: 32px;
+            border-radius: 8px;
+            animation: slide infinite 3000ms;
+        }
+
+        @keyframes slide {
+            0% {
+                transform: translateX(-4px);
+            }
+
+            50% {
+                transform: translateX(4px);
+            }
+
+            100% {
+                transform: translateX(-4px);
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="slideshow-container">
+        <!-- Angie Mathot -->
+        <div class="mySlides fade slideContainer">
+            <img class="slide-img"
+                src="https://uploads.flan.design/c0f6c735/d8f0aa60/8a49e421/dd329126/146a1809/5c0f1526/748dc046/975754b7.jpeg">
+            <div class="id-card">
+                <img class="profile-pic"
+                    src="https://uploads.flan.design/f06cb5a6/07db3081/10e9a76a/b6abbd2d/fe4d3b21/0be43220/b5471a99/1daa2a32.jpeg">
+                <div class="name" style="font-size:15px;">Angie Mathot</div>
+                <div class="type">Digital Designer</div>
+                <div class="action-container"><a target="_blank"
+                        href="https://app.flan.design/public-profile/samerabusham" class="link-text"><img
+                            src="https://uploads-ssl.webflow.com/6159d8259eb8a308cb0e3d5c/6159db854a67c01eed70908b_Group%20170.svg"
+                            style="width:24px; margin-right:8px; margin-top:-2px;" class="logo">View Profile</a></div>
+            </div>
+            <div class="qr-card">
+                <img class="profile-pic" src="./qr/ptiteangele.svg">
+            </div>
+        </div>
+
+        <div class="mySlides fade slideContainer">
+            <img class="slide-img"
+                src="https://uploads.flan.design/bfa07e35/db736e1f/4e505698/f21502f7/c8dccb7b/2330fd94/1ad3d399/da92d864.jpeg">
+            <div class="id-card">
+                <img class="profile-pic"
+                    src="https://uploads.flan.design/f06cb5a6/07db3081/10e9a76a/b6abbd2d/fe4d3b21/0be43220/b5471a99/1daa2a32.jpeg">
+                <div class="name" style="font-size:15px;">Angie Mathot</div>
+                <div class="type">Digital Designer</div>
+                <div class="action-container"><a target="_blank"
+                        href="https://app.flan.design/public-profile/samerabusham" class="link-text"><img
+                            src="https://uploads-ssl.webflow.com/6159d8259eb8a308cb0e3d5c/6159db854a67c01eed70908b_Group%20170.svg"
+                            style="width:24px; margin-right:8px; margin-top:-2px;" class="logo">View Profile</a>
+                </div>
+            </div>
+            <div class="qr-card">
+                <img class="profile-pic" src="./qr/ptiteangele.svg">
+            </div>
+        </div>
+        <div class="mySlides fade slideContainer">
+            <img class="slide-img"
+                src="https://uploads.flan.design/ac373b97/5e10ef0f/7631ad55/a1d280d5/7ef96ae1/981c967b/3767d180/ee0cc97d.jpeg">
+            <div class="id-card">
+                <img class="profile-pic"
+                    src="https://uploads.flan.design/f06cb5a6/07db3081/10e9a76a/b6abbd2d/fe4d3b21/0be43220/b5471a99/1daa2a32.jpeg">
+                <div class="name" style="font-size:15px;">Angie Mathot</div>
+                <div class="type">Digital Designer</div>
+                <div class="action-container"><a target="_blank"
+                        href="https://app.flan.design/public-profile/samerabusham" class="link-text"><img
+                            src="https://uploads-ssl.webflow.com/6159d8259eb8a308cb0e3d5c/6159db854a67c01eed70908b_Group%20170.svg"
+                            style="width:24px; margin-right:8px; margin-top:-2px;" class="logo">View Profile</a>
+                </div>
+            </div>
+            <div class="qr-card">
+                <img class="profile-pic" src="./qr/ptiteangele.svg">
+            </div>
+        </div>
+        <!-- Adriana Valenzuela -->
+        <div class="mySlides fade slideContainer">
+            <img class="slide-img"
+                src="https://uploads.flan.design/9825afd5/30b50e5f/afa22728/5c9f6515/4329d522/2a6e8ce3/8d615340/428022de.jpeg">
+            <div class="id-card">
+                <img class="profile-pic"
+                    src="https://uploads.flan.design/49633e32/014b9461/a13cde9e/9c9efe80/2897d1bb/5e333bb1/5ef795fc/966dda9e.png">
+                <div class="name" style="font-size:15px;">Adriana Valenzuela</div>
+                <div class="type">3D Artist</div>
+                <div class="action-container"><a target="_blank"
+                        href="https://app.flan.design/public-profile/samerabusham" class="link-text"><img
+                            src="https://uploads-ssl.webflow.com/6159d8259eb8a308cb0e3d5c/6159db854a67c01eed70908b_Group%20170.svg"
+                            style="width:24px; margin-right:8px; margin-top:-2px;" class="logo">View Profile</a>
+                </div>
+            </div>
+            <div class="qr-card">
+                <img class="profile-pic" src="./qr/boomlabverse.svg">
+            </div>
+        </div>
+        <div class="mySlides fade slideContainer">
+            <img class="slide-img"
+                src="https://uploads.flan.design/a465066c/1e300069/4df918b9/aedace9c/58b25b61/4457c8f4/1f1494ac/4dc9c4a4.png">
+            <div class="id-card">
+                <img class="profile-pic"
+                    src="https://uploads.flan.design/49633e32/014b9461/a13cde9e/9c9efe80/2897d1bb/5e333bb1/5ef795fc/966dda9e.png">
+                <div class="name" style="font-size:15px;">Adriana Valenzuela</div>
+                <div class="type">3D Artist</div>
+                <div class="action-container"><a target="_blank"
+                        href="https://app.flan.design/public-profile/samerabusham" class="link-text"><img
+                            src="https://uploads-ssl.webflow.com/6159d8259eb8a308cb0e3d5c/6159db854a67c01eed70908b_Group%20170.svg"
+                            style="width:24px; margin-right:8px; margin-top:-2px;" class="logo">View Profile</a>
+                </div>
+            </div>
+            <div class="qr-card">
+                <img class="profile-pic" src="./qr/boomlabverse.svg">
+            </div>
+        </div>
+        <div class="mySlides fade slideContainer">
+            <img class="slide-img"
+                src="https://uploads.flan.design/c84df24e/060fcc5b/9ac5239e/0eb5d954/5e5d8ae1/102c631f/ee050eae/62f7bb87.png">
+            <div class="id-card">
+                <img class="profile-pic"
+                    src="https://uploads.flan.design/49633e32/014b9461/a13cde9e/9c9efe80/2897d1bb/5e333bb1/5ef795fc/966dda9e.png">
+                <div class="name" style="font-size:15px;">Adriana Valenzuela</div>
+                <div class="type">3D Artist</div>
+                <div class="action-container"><a target="_blank"
+                        href="https://app.flan.design/public-profile/samerabusham" class="link-text"><img
+                            src="https://uploads-ssl.webflow.com/6159d8259eb8a308cb0e3d5c/6159db854a67c01eed70908b_Group%20170.svg"
+                            style="width:24px; margin-right:8px; margin-top:-2px;" class="logo">View Profile</a>
+                </div>
+            </div>
+            <div class="qr-card">
+                <img class="profile-pic" src="./qr/boomlabverse.svg">
+            </div>
+        </div>
+
+        <!-- Marcelo Rampazzo -->
+        <div class="mySlides fade slideContainer">
+            <img class="slide-img"
+                src="https://uploads.flan.design/efee4c58/6bbfe8d5/a58e47ad/1df68d3f/869ec376/7ef8662a/324244fc/d59ba078.png">
+            <div class="id-card">
+                <img class="profile-pic"
+                    src="https://uploads.flan.design/da7843a8/45662d91/0617ff52/bc2c3e61/71258f08/919bf4c3/c090627e/b218ec86.jpeg">
+                <div class="name">Marcelo Rampazzo</div>
+                <div class="type">3D Designer</div>
+                <div class="action-container"><a target="_blank"
+                        href="https://app.flan.design/public-profile/samerabusham" class="link-text"><img
+                            src="https://uploads-ssl.webflow.com/6159d8259eb8a308cb0e3d5c/6159db854a67c01eed70908b_Group%20170.svg"
+                            style="width:24px; margin-right:8px; margin-top:-2px;" class="logo">View Profile</a>
+                </div>
+            </div>
+            <div class="qr-card">
+                <img class="profile-pic" src="./qr/rampazzo.svg">
+            </div>
+        </div>
+
+        <div class="mySlides fade slideContainer">
+            <img class="slide-img"
+                src="https://uploads.flan.design/7a6e9e75/e5a22ede/caa543d2/fd5806e3/23257267/8f36404d/34d804b2/6add238a.png">
+            <div class="id-card">
+                <img class="profile-pic"
+                    src="https://uploads.flan.design/da7843a8/45662d91/0617ff52/bc2c3e61/71258f08/919bf4c3/c090627e/b218ec86.jpeg">
+                <div class="name">Marcelo Rampazzo</div>
+                <div class="type">3D Designer</div>
+                <div class="action-container"><a target="_blank"
+                        href="https://app.flan.design/public-profile/samerabusham" class="link-text"><img
+                            src="https://uploads-ssl.webflow.com/6159d8259eb8a308cb0e3d5c/6159db854a67c01eed70908b_Group%20170.svg"
+                            style="width:24px; margin-right:8px; margin-top:-2px;" class="logo">View Profile</a>
+                </div>
+            </div>
+            <div class="qr-card">
+                <img class="profile-pic" src="./qr/rampazzo.svg">
+            </div>
+        </div>
+
+        <div class="mySlides fade slideContainer">
+            <img class="slide-img"
+                src="https://uploads.flan.design/fd2234d9/bdef92bf/ee1c7dcd/61d6c50d/698a1074/5e194400/846c507d/e701fc14.png">
+            <div class="id-card">
+                <img class="profile-pic"
+                    src="https://uploads.flan.design/da7843a8/45662d91/0617ff52/bc2c3e61/71258f08/919bf4c3/c090627e/b218ec86.jpeg">
+                <div class="name">Marcelo Rampazzo</div>
+                <div class="type">3D Designer</div>
+                <div class="action-container"><a target="_blank"
+                        href="https://app.flan.design/public-profile/samerabusham" class="link-text"><img
+                            src="https://uploads-ssl.webflow.com/6159d8259eb8a308cb0e3d5c/6159db854a67c01eed70908b_Group%20170.svg"
+                            style="width:24px; margin-right:8px; margin-top:-2px;" class="logo">View Profile</a>
+                </div>
+            </div>
+            <div class="qr-card">
+                <img class="profile-pic" src="./qr/rampazzo.svg">
+            </div>
+        </div>
+        <!-- Samer Abu Sham -->
+        <div class="mySlides fade slideContainer">
+            <img class="slide-img"
+                src="https://uploads.flan.design/726f3397/06ff3e4c/2e20fbd2/b4562ba6/599eaeca/8f5d3693/8fa83808/6b3ce223.jpeg">
+            <div class="id-card">
+                <img class="profile-pic"
+                    src="https://uploads.flan.design/beea725b/c36207a8/ebefacc2/7ca26079/f44d65d6/b15775aa/725057de/49d7b3b3.jpeg">
+                <div class="name">Samer Abu Sham</div>
+                <div class="type">3D Designer</div>
+                <div class="action-container"><a target="_blank"
+                        href="https://app.flan.design/public-profile/samerabusham" class="link-text"><img
+                            src="https://uploads-ssl.webflow.com/6159d8259eb8a308cb0e3d5c/6159db854a67c01eed70908b_Group%20170.svg"
+                            style="width:24px; margin-right:8px; margin-top:-2px;" class="logo">View Profile</a>
+                </div>
+            </div>
+            <div class="qr-card">
+                <img class="profile-pic" src="./qr/samerabusham.svg">
+            </div>
+        </div>
+
+        <div class="mySlides fade slideContainer">
+            <img class="slide-img"
+                src="https://uploads.flan.design/de8779bc/c117a083/60671f99/d99429b5/3ac72ec9/adb5995b/8f4086c8/0848af39.jpeg">
+            <div class="id-card">
+                <img class="profile-pic"
+                    src="https://uploads.flan.design/beea725b/c36207a8/ebefacc2/7ca26079/f44d65d6/b15775aa/725057de/49d7b3b3.jpeg">
+                <div class="name">Samer Abu Sham</div>
+                <div class="type">3D Designer</div>
+                <div class="action-container"><a target="_blank"
+                        href="https://app.flan.design/public-profile/samerabusham" class="link-text"><img
+                            src="https://uploads-ssl.webflow.com/6159d8259eb8a308cb0e3d5c/6159db854a67c01eed70908b_Group%20170.svg"
+                            style="width:24px; margin-right:8px; margin-top:-2px;" class="logo">View Profile</a>
+                </div>
+            </div>
+            <div class="qr-card">
+                <img class="profile-pic" src="./qr/samerabusham.svg">
+            </div>
+        </div>
+
+        <div class="mySlides fade slideContainer">
+            <img class="slide-img"
+                src="https://uploads.flan.design/efdcba8c/1b2b521d/62863892/d01afcb6/a30f9070/eb60400f/32d94df3/2d8b5724.png">
+            <div class="id-card">
+                <img class="profile-pic"
+                    src="https://uploads.flan.design/beea725b/c36207a8/ebefacc2/7ca26079/f44d65d6/b15775aa/725057de/49d7b3b3.jpeg">
+                <div class="name">Samer Abu Sham</div>
+                <div class="type">3D Designer</div>
+                <div class="action-container"><a target="_blank"
+                        href="https://app.flan.design/public-profile/samerabusham" class="link-text"><img
+                            src="https://uploads-ssl.webflow.com/6159d8259eb8a308cb0e3d5c/6159db854a67c01eed70908b_Group%20170.svg"
+                            style="width:24px; margin-right:8px; margin-top:-2px;" class="logo">View Profile</a>
+                </div>
+            </div>
+            <div class="qr-card">
+                <img class="profile-pic" src="./qr/samerabusham.svg">
+            </div>
+        </div>
+
+        <!-- Andre Sibayan -->
+        <div class="mySlides fade slideContainer">
+            <img class="slide-img"
+                src="https://uploads.flan.design/5547bd8f/15cffcb6/04ec3038/c70e3532/437d6e85/a720c819/33dae8f6/3f76e1a2.png">
+            <div class="id-card">
+                <img class="profile-pic"
+                    src="https://uploads.flan.design/0dfb1b81/d37790ed/e716174d/6777c6bd/64867b21/4575d179/4fcdb20d/e1a7284c.jpeg">
+                <div class="name">Andre Sibayan</div>
+                <div class="type">Digital Artist</div>
+                <div class="action-container"><a target="_blank"
+                        href="https://app.flan.design/public-profile/samerabusham" class="link-text"><img
+                            src="https://uploads-ssl.webflow.com/6159d8259eb8a308cb0e3d5c/6159db854a67c01eed70908b_Group%20170.svg"
+                            style="width:24px; margin-right:8px; margin-top:-2px;" class="logo">View Profile</a>
+                </div>
+            </div>
+            <div class="qr-card">
+                <img class="profile-pic" src="./qr/deeyaree.svg">
+            </div>
+        </div>
+
+        <div class="mySlides fade slideContainer">
+            <img class="slide-img"
+                src="https://uploads.flan.design/c6b21cc0/5dd4ae46/9b59b53b/47bc769e/8f94c0c9/62557f01/9cfb9a14/e74bfceb.png">
+            <div class="id-card">
+                <img class="profile-pic"
+                    src="https://uploads.flan.design/0dfb1b81/d37790ed/e716174d/6777c6bd/64867b21/4575d179/4fcdb20d/e1a7284c.jpeg">
+                <div class="name">Andre Sibayan</div>
+                <div class="type">Digital Artist</div>
+                <div class="action-container"><a target="_blank"
+                        href="https://app.flan.design/public-profile/samerabusham" class="link-text"><img
+                            src="https://uploads-ssl.webflow.com/6159d8259eb8a308cb0e3d5c/6159db854a67c01eed70908b_Group%20170.svg"
+                            style="width:24px; margin-right:8px; margin-top:-2px;" class="logo">View Profile</a>
+                </div>
+            </div>
+            <div class="qr-card">
+                <img class="profile-pic" src="./qr/deeyaree.svg">
+            </div>
+        </div>
+
+        <div class="mySlides fade slideContainer">
+            <img class="slide-img"
+                src="https://uploads.flan.design/d5db9f50/7a08d9a4/6c7e89cc/39659429/0d6e4e00/0124ed3a/b093f1b1/69689063.png">
+            <div class="id-card">
+                <img class="profile-pic"
+                    src="https://uploads.flan.design/0dfb1b81/d37790ed/e716174d/6777c6bd/64867b21/4575d179/4fcdb20d/e1a7284c.jpeg">
+                <div class="name">Andre Sibayan</div>
+                <div class="type">Digital Artist</div>
+                <div class="action-container"><a target="_blank"
+                        href="https://app.flan.design/public-profile/samerabusham" class="link-text"><img
+                            src="https://uploads-ssl.webflow.com/6159d8259eb8a308cb0e3d5c/6159db854a67c01eed70908b_Group%20170.svg"
+                            style="width:24px; margin-right:8px; margin-top:-2px;" class="logo">View Profile</a>
+                </div>
+            </div>
+            <div class="qr-card">
+                <img class="profile-pic" src="./qr/deeyaree.svg">
+            </div>
+        </div>
+
+    </div>
+    <br>
+
+    <div style="text-align:center">
+        <span class="dot"></span>
+        <span class="dot"></span>
+        <span class="dot"></span>
+        <span class="dot"></span>
+        <span class="dot"></span>
+        <span class="dot"></span>
+        <span class="dot"></span>
+        <span class="dot"></span>
+        <span class="dot"></span>
+        <span class="dot"></span>
+        <span class="dot"></span>
+        <span class="dot"></span>
+        <span class="dot"></span>
+        <span class="dot"></span>
+        <span class="dot"></span>
+    </div>
+
+    <script>
+        let slideIndex = 0;
+        showSlides();
+
+        function showSlides() {
+            let i;
+            let slides = document.getElementsByClassName("mySlides");
+            let dots = document.getElementsByClassName("dot");
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+            slideIndex++;
+            if (slideIndex > slides.length) {
+                slideIndex = 1
+            }
+            for (i = 0; i < dots.length; i++) {
+                dots[i].className = dots[i].className.replace(" active", "");
+            }
+            slides[slideIndex - 1].style.display = "block";
+            dots[slideIndex - 1].className += " active";
+            setTimeout(showSlides, 5000); // Change image every 4 seconds
+        }
+    </script>
+
+</body>
+
+</html>
