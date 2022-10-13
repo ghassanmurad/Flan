@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>CodePen - Outer Space Background</title>
+
+
+</head>
+
+<body>
+    <!-- partial:index.partial.html -->
+
+
+
+
+    <div class='stars'></div>
+    <div class='twinkling'></div>
+    <div class='clouds'></div>
+    <div class="image-back"></div>
+    <div class="image-front"></div>
+    <div class="content-container">
+        <h1 class="title">BUILDING TOMORROW</h1>
+        <h3 class="title">The web3 freelance marketplace for high-quality Metaverse designers, NFT artists, and web3
+            UI/UXers.</h3>
+            <img class="qr-pic" src="./Assets/flan-design.svg">
+   <h3 class="social-handle" style="font-size:18px;"">@FlanOnSocial</h3>
+        </div>
+
+    <style>
+        @font-face {
+            font-family: 'Flan Capitals';
+            src: url('https://uploads-ssl.webflow.com/6159d8259eb8a308cb0e3d5c/61db8119ee276f46298d727a_flancap.woff') format('woff');
+            font-weight: 100;
+            font-style: normal;
+            font-display: swap;
+        }
+
+        body {
+            margin: 0;
+        }
+
+        .qr-pic {
+            object-fit: cover;
+            height: 128px;
+            margin-top: 24px;
+            border-radius: 8px;
+            animation: slide infinite 5000ms;
+            animation-delay:1000ms;
+        }
+
+        @keyframes slide {
+	0% {
+		text-shadow: 0 5px 15px 0px rgba(0,0,0,0.6);
+		transform: translatey(0px);
+	}
+	50% {
+		text-shadow: 0 25px 15px 0px rgba(0,0,0,0.2);
+		transform: translatey(-20px);
+	}
+	100% {
+		text-shadow: 0 5px 15px 0px rgba(0,0,0,0.6);
+		transform: translatey(0px);
+	}
+}
+        .image-front {
+            margin: 0;
+            background: url(./Assets/F.png);
+            position: absolute;
+            background-size: cover;
+            background-position-x: 100%;
+            height: 100%;
+            width: 100%;
+            z-index: 12;
+        }
+
+        .image-back {
+            margin: 0;
+            background: url(./Assets/B.png);
+            position: absolute;
+            background-size: cover;
+            background-position-x: 100%;
+            height: 100%;
+            width: 100%;
+            z-index: 1;
+        }
+
+        .content-container {
+            margin-left: 124px;
+            position: absolute;
+            z-index: 28;
+            top: 25%;
+            width: 440px;
+
+        }
+.social-handle {
+    animation-delay:1000ms;
+    margin-top:16px;
+}
+        h1 {
+            font-family: 'Flan Capitals';
+            color: white;
+            font-size: 52px;
+            margin-bottom: 24px;
+            line-height: 1.25em;
+            letter-spacing: 4px;
+            animation: slide infinite 5000ms;
+
+        }
+
+        h3 {
+            font-family: 'Open Sans';
+            font-weight: 300;
+            color: white;
+            font-size: 32px;
+            animation: slide infinite 5000ms;
+            animation-delay:500ms;
+
+        }
+
+        .stars,
+        .twinkling,
+        .clouds {
+            position: absolute;
+            display: block;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        .stars {
+            z-index: 0;
+            background: #111111 url("https://app.flan.design/assets/images/stars-bg/stars.png") repeat top center;
+        }
+
+        .twinkling {
+            z-index: 1;
+            background: transparent url("https://app.flan.design/assets/images/stars-bg/twinkling.png") repeat top center;
+            animation: move-twink-back 200s linear infinite;
+            filter: brightness(.4);
+        }
+
+        .clouds {
+            z-index: 2;
+            background: transparent url("https://app.flan.design/assets/images/stars-bg/clouds.png") repeat top center;
+            animation: move-clouds-back 200s linear infinite;
+        }
+
+        @keyframes move-twink-back {
+            from {
+                background-position: 0 0;
+            }
+
+            to {
+                background-position: -10000px 5000px;
+            }
+        }
+
+        @keyframes move-clouds-back {
+            from {
+                background-position: 0 0;
+            }
+
+            to {
+                background-position: 10000px 0;
+            }
+        }
+    </style>
+
+</body>
+
+</html>
